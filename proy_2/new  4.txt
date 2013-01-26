@@ -1,0 +1,17 @@
+echo '<select id="id_select" name="forma" ONCHANGE="location = this.options[this.selectedIndex].value;">';
+while($list=mysql_fetch_row($id)){
+$opc=$opc.'<option value="buscar.php" id="opt">'.$list[0].'</option>';
+
+
+
+<?php
+require_once("sec.php"); 
+$opc="";
+$id=mysql_query("select distinct grupolocal from locales limit 30;");
+echo '<select id="id_select" name="id_select">';
+while($list=mysql_fetch_row($id)){
+$opc=$opc.'<option>'.$list[0].'</option>';
+}
+echo $opc;
+echo "</select>";
+?>
